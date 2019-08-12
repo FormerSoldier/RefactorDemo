@@ -9,8 +9,6 @@ public class Rental {
         this.dayRented = dayRented;
     }
 
-
-
     public Movie getMovie() {
         return movie;
     }
@@ -19,24 +17,8 @@ public class Rental {
         return dayRented;
     }
 
-    double getThisAmount(double thisAmount) {
-        switch (getMovie().getPriceCode()) {
-            case Movie.REGULAR:
-                thisAmount += 2;
-                if (getDayRented() > 2) {
-                    thisAmount += (getDayRented() - 2) * 1.5;
-                }
-                break;
-            case Movie.NEW_RELEASE:
-                thisAmount += getDayRented() * 3;
-                break;
-            case Movie.CHILDRENS:
-                thisAmount += 1.5;
-                if (getDayRented() > 3) {
-                    thisAmount += (getDayRented() - 3) * 1.5;
-                }
-                break;
-        }
+    double getThisAmount() {
+        double thisAmount = movie.calculateAmount(this);
         return thisAmount;
     }
 
@@ -50,25 +32,5 @@ public class Rental {
         return frequentRenterPoints;
     }
 
-    double getThisAmount() {
-        double thisAmount = 0;
-        switch (getMovie().getPriceCode()) {
-            case Movie.REGULAR:
-                thisAmount += 2;
-                if (getDayRented() > 2) {
-                    thisAmount += (getDayRented() - 2) * 1.5;
-                }
-                break;
-            case Movie.NEW_RELEASE:
-                thisAmount += getDayRented() * 3;
-                break;
-            case Movie.CHILDRENS:
-                thisAmount += 1.5;
-                if (getDayRented() > 3) {
-                    thisAmount += (getDayRented() - 3) * 1.5;
-                }
-                break;
-        }
-        return thisAmount;
-    }
+
 }
