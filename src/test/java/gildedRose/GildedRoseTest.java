@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class GildedRoseTest {
-    private final String MISMATCH = "MISMATCH";
+    private final String NORMAL = "NORMAL";
     private final String AGED_BRIE = "Aged Brie";
     private final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
     private final String SULFURAS = "Sulfuras, Hand of Ragnaros";
@@ -14,14 +14,14 @@ public class GildedRoseTest {
 
 
     @Test
-    public void should_decrease_sellIn_when_call_updateQuality_given_MISMATCH_has_two_sellIn_and_zero_quality(){
-        givenAnItemToGildedRose(new Item(MISMATCH,2,0));
+    public void should_decrease_sellIn_when_call_updateQuality_given_NORMAL_has_two_sellIn_and_zero_quality(){
+        givenAnItemToGildedRose(new Item(NORMAL,2,0));
         assertAnItemSellInAndQualityWhenCallUpdateQuality(1,0);
     }
 
     @Test
-    public void should_decrease_sellIn_and_quality_when_call_updateQuality_given_MISMATCH_has_two_sellIn_and_two_quality(){
-        givenAnItemToGildedRose(new Item(MISMATCH,2,2));
+    public void should_decrease_sellIn_and_quality_when_call_updateQuality_given_NORMAL_has_two_sellIn_and_two_quality(){
+        givenAnItemToGildedRose(new Item(NORMAL,2,2));
         assertAnItemSellInAndQualityWhenCallUpdateQuality(1,1);
     }
 
