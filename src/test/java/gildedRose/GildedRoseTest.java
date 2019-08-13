@@ -62,10 +62,18 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void should_decrease_sellIn_and_quality_when_call_updateQuality_given_AGED_has_less_than_zero_sellIn_and_less_than_fifty_quality(){
-        givenAnItemToGildedRose(new Item(BACKSTAGE_PASSES,12,40));
-        assertAnItemSellInAndQualityWhenCallUpdateQuality(11,41);
+    public void should_decrease_sellIn_and_zero_quality_when_call_updateQuality_given_BACKSTAGE_has_zero_sellIn_and_less_than_fifty_quality(){
+        givenAnItemToGildedRose(new Item(BACKSTAGE_PASSES,0,40));
+        assertAnItemSellInAndQualityWhenCallUpdateQuality(-1,0);
     }
+
+    @Test
+    public void should_decrease_sellIn_and_zero_quality_when_call_updateQuality_given_AGED_has_zero_sellIn_and_less_than_fifty_quality(){
+        givenAnItemToGildedRose(new Item(AGED_BRIE,0,40));
+        assertAnItemSellInAndQualityWhenCallUpdateQuality(-1,42);
+    }
+
+
 
 
 
