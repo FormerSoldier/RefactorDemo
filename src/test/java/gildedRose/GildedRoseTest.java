@@ -55,6 +55,12 @@ public class GildedRoseTest {
         assertAnItemSellInAndQualityWhenCallUpdateQuality(6,42);
     }
 
+    @Test
+    public void should_decrease_sellIn_and_increase_quality_when_call_updateQuality_given_BACKSTAGE_has_beyond_eleven_sellIn_and_less_than_fifty_quality(){
+        givenAnItemToGildedRose(new Item(BACKSTAGE_PASSES,12,40));
+        assertAnItemSellInAndQualityWhenCallUpdateQuality(11,41);
+    }
+
 
 
 
