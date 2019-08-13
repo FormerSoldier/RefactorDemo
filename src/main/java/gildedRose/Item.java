@@ -25,7 +25,7 @@ public class Item {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
-    public void UpdateEachItem(GildedRose gildedRose) {
+    public void UpdateEachItem() {
         sellItem.updateQuality(this);
     }
     public void increaseQualityIfQualityLessThanFifty() {
@@ -41,20 +41,8 @@ public class Item {
         quality = quality - 1;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getSellIn() {
         return sellIn;
-    }
-
-    public void setSellIn(int sellIn) {
-        this.sellIn = sellIn;
     }
 
     public int getQuality() {
