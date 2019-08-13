@@ -20,24 +20,30 @@ public class GildedRoseTest {
     }
 
     @Test
+    public void should_decrease_sellIn_and_quality_when_call_updateQuality_given_MISMATCH_has_two_sellIn_and_two_quality(){
+        givenAnItemToGildedRose(new Item(MISMATCH,2,2));
+        assertAnItemSellInAndQualityWhenCallUpdateQuality(1,1);
+    }
+
+    @Test
     public void should_nothing_change_when_call_updateQuality_given_SULFURAS(){
         givenAnItemToGildedRose(new Item(SULFURAS,1,1));
         assertAnItemSellInAndQualityWhenCallUpdateQuality(1,1);
     }
 
     @Test
-    public void should_decrease_sellIn_and_quality_when_call_updateQuality_given_MISMATCH_has_two_sellIn_and_two_quality(){
-        givenAnItemToGildedRose(new Item(MISMATCH,2,2));
-        assertAnItemSellInAndQualityWhenCallUpdateQuality(1,1);
-    }
-
-
-
-    @Test
     public void should_decrease_sellIn_when_call_updateQuality_given_AGRD_item_has_one_sellIn_and_beyond_fifty_quality(){
         givenAnItemToGildedRose(new Item(AGED_BRIE,1,51));
         assertAnItemSellInAndQualityWhenCallUpdateQuality(0,51);
     }
+
+    @Test
+    public void should_decrease_sellIn_and_increase_quality_when_call_updateQuality_given_AGRD_item_has_two_sellIn_and_less_than_fifty_quality(){
+        givenAnItemToGildedRose(new Item(AGED_BRIE,2,40));
+        assertAnItemSellInAndQualityWhenCallUpdateQuality(1,41);
+    }
+
+
 
 
     private void givenAnItemToGildedRose(Item item){
