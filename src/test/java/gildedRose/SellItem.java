@@ -19,4 +19,6 @@ public abstract class SellItem {
     }
 
     protected abstract void updateQuality();
+
+
 }
