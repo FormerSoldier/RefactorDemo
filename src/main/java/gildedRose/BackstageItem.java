@@ -7,10 +7,10 @@ public class BackstageItem implements SellItem {
         item.decreaseSellIn();
         item.increaseQualityIfQualityLessThanFifty();
         if (item.getQuality() < Item.UpperLimit) {
-            if (item.getSellIn() < 11) {
+            if (item.getSellIn() < 10) {
                 item.increaseQualityIfQualityLessThanFifty();
             }
-            if (item.getSellIn() < 6) {
+            if (item.getSellIn() < 5) {
                 item.increaseQualityIfQualityLessThanFifty();
             }
         }

@@ -44,19 +44,19 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void should_decrease_sellIn_and_increase_three_quality_when_call_updateQuality_given_BACKSTAGE_has_less_than_six_sellIn_and_less_than_fifty_quality(){
+    public void should_decrease_sellIn_and_increase_three_quality_when_call_updateQuality_given_BACKSTAGE_has_less_than_five_sellIn_and_less_than_fifty_quality(){
         givenAnItemToGildedRose(new Item(BACKSTAGE_PASSES,4,40));
         assertAnItemSellInAndQualityWhenCallUpdateQuality(3,43);
     }
 
     @Test
-    public void should_decrease_sellIn_and_increase_two_quality_when_call_updateQuality_given_BACKSTAGE_has_beyond_six_and_less_than_eleven_sellIn_and_less_than_fifty_quality(){
+    public void should_decrease_sellIn_and_increase_two_quality_when_call_updateQuality_given_BACKSTAGE_has_beyond_five_and_less_than_ten_sellIn_and_less_than_fifty_quality(){
         givenAnItemToGildedRose(new Item(BACKSTAGE_PASSES,7,40));
         assertAnItemSellInAndQualityWhenCallUpdateQuality(6,42);
     }
 
     @Test
-    public void should_decrease_sellIn_and_increase_quality_when_call_updateQuality_given_BACKSTAGE_has_beyond_eleven_sellIn_and_less_than_fifty_quality(){
+    public void should_decrease_sellIn_and_increase_quality_when_call_updateQuality_given_BACKSTAGE_has_beyond_ten_sellIn_and_less_than_fifty_quality(){
         givenAnItemToGildedRose(new Item(BACKSTAGE_PASSES,12,40));
         assertAnItemSellInAndQualityWhenCallUpdateQuality(11,41);
     }
