@@ -8,6 +8,7 @@ public class GildedRoseTest {
     private final String AGED_BRIE = "Aged Brie";
     private final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
     private final String SULFURAS = "Sulfuras, Hand of Ragnaros";
+    private final String CONJURED = "CONJURED";
 
     GildedRose gildedRose = new GildedRose(null);
     Item[] items = new Item[1];
@@ -72,6 +73,18 @@ public class GildedRoseTest {
         givenAnItemToGildedRose(new Item(AGED_BRIE,0,40));
         assertAnItemSellInAndQualityWhenCallUpdateQuality(-1,42);
     }
+
+    @Test
+    public void should_decrease_sellIn_when_call_updateQuality_given_CONJURED_has_two_sellIn_and_zero_quality(){
+        givenAnItemToGildedRose(new Item(CONJURED,2,0));
+        assertAnItemSellInAndQualityWhenCallUpdateQuality(1,0);
+    }
+    @Test
+    public void should_decrease_sellIn_and_two_quality_when_call_updateQuality_given_NORMAL_has_two_sellIn_and_eight_quality(){
+        givenAnItemToGildedRose(new Item(NORMAL,2,8));
+        assertAnItemSellInAndQualityWhenCallUpdateQuality(1,6);
+    }
+
 
 
 

@@ -38,7 +38,8 @@ public class Item {
         sellIn = sellIn - 1;
     }
     public void decreaseQuality(){
-        quality = quality - 1;
+        if (quality > 0)
+            quality -= 1;
     }
 
     public int getSellIn() {
