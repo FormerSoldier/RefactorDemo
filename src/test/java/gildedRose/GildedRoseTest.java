@@ -12,6 +12,13 @@ public class GildedRoseTest {
     GildedRose gildedRose = new GildedRose(null);
     Item[] items = new Item[1];
 
+
+    @Test
+    public void should_decrease_sellIn_when_call_updateQuality_given_MISMATCH_has_two_sellIn_and_zero_quality(){
+        givenAnItemToGildedRose(new Item(MISMATCH,2,0));
+        assertAnItemSellInAndQualityWhenCallUpdateQuality(1,0);
+    }
+
     @Test
     public void should_nothing_change_when_call_updateQuality_given_SULFURAS(){
         givenAnItemToGildedRose(new Item(SULFURAS,1,1));
