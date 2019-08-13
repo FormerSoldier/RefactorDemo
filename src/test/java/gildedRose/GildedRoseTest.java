@@ -75,10 +75,6 @@ public class GildedRoseTest {
 
 
 
-
-
-
-
     private void givenAnItemToGildedRose(Item item){
         items[0] = item;
         gildedRose.items = items;
