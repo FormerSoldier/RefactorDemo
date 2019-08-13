@@ -80,13 +80,16 @@ public class GildedRoseTest {
         assertAnItemSellInAndQualityWhenCallUpdateQuality(1,0);
     }
     @Test
-    public void should_decrease_sellIn_and_two_quality_when_call_updateQuality_given_NORMAL_has_two_sellIn_and_eight_quality(){
-        givenAnItemToGildedRose(new Item(NORMAL,2,8));
+    public void should_decrease_sellIn_and_two_quality_when_call_updateQuality_given_CONJURED_has_two_sellIn_and_eight_quality(){
+        givenAnItemToGildedRose(new Item(CONJURED,2,8));
         assertAnItemSellInAndQualityWhenCallUpdateQuality(1,6);
     }
 
-
-
+    @Test
+    public void should_decrease_sellIn_and_four_quality_when_call_updateQuality_given_CONJURED_has_zero_sellIn_and_eight_quality(){
+        givenAnItemToGildedRose(new Item(CONJURED,0,8));
+        assertAnItemSellInAndQualityWhenCallUpdateQuality(-1,4);
+    }
 
     private void givenAnItemToGildedRose(Item item){
         items[0] = item;

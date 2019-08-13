@@ -35,9 +35,9 @@ public class Item {
     }
 
     public void decreaseSellIn(){
-        sellIn = sellIn - 1;
+        sellIn -= 1;
     }
-    public void decreaseQuality(){
+    public void saleDecreaseQuality(){
         if (quality > 0)
             quality -= 1;
     }
